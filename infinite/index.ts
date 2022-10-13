@@ -221,9 +221,7 @@ export const infinite = (<Data, Error>(useSWRNext: SWRHook) =>
           }
         }
 
-        return arguments.length
-          ? swr.mutate(data, shouldRevalidate)
-          : swr.mutate()
+        return arguments.length ? swr.mutate(data, options) : swr.mutate()
       },
       // swr.mutate is always the same reference
       // eslint-disable-next-line react-hooks/exhaustive-deps
